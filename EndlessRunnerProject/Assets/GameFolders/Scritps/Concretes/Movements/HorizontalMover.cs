@@ -7,9 +7,9 @@ namespace EndlessRunnerProject.Movements
 {
     public class HorizontalMover
     {
-        PlayerControllers _playerController;
+        PlayerController _playerController;
 
-        public HorizontalMover(PlayerControllers playerController)
+        public HorizontalMover(PlayerController playerController)
         {
             _playerController = playerController;
         }
