@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace EndlessRunnerProject.Cont
+namespace EndlessRunnerProject.Controllers
 {
     public class FloorController : MonoBehaviour
     {
