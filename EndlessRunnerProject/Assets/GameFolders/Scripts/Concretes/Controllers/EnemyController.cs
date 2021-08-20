@@ -1,3 +1,4 @@
+using EndlessRunnerProject.Managers;
 using EndlessRunnerProject.Movements;
 using System.Collections;
 using System.Collections.Generic;
@@ -37,7 +38,7 @@ namespace EndlessRunnerProject.Controllers
 
         private void KillYourSelf()
         {
-            Destroy(this.gameObject);
+            EnemyManager.Instance.SetPool(this);
         }
     }
 }
