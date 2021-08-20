@@ -2,6 +2,7 @@ using EndlessRunnerProject.Abstacts.Utilities;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace EndlessRunnerProject.Managers
 {
@@ -17,10 +18,15 @@ namespace EndlessRunnerProject.Managers
             Time.timeScale = 0f;
         }
 
-        public void LoadScene()
+        public void LoadScene(string sceneName)
         {
-            Debug.Log("Yüklenecek sahne yüklendi");
-            //Yükleme Ýþlemleri
+            StartCoroutine(LoadSceneAsync(sceneName));
+        }
+
+        private IEnumerator LoadSceneAsync(string sceneName)
+        {
+            Time.timeScale = 1f;
+            yield return SceneManager.LoadSceneAsync(sceneName);
         }
         public void ExitGame()
         {
