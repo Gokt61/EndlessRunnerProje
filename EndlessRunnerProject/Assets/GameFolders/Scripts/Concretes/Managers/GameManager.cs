@@ -8,6 +8,8 @@ namespace EndlessRunnerProject.Managers
 {
     public class GameManager : SingletonMonoBehaviourObject<GameManager>
     {
+        public event System.Action OnGameStop;
+
         private void Awake()
         {
             SingletonThisObject(this);
@@ -15,7 +17,12 @@ namespace EndlessRunnerProject.Managers
 
         public void StopGame()
         {
+            OnGameStop?.Invoke();
             Time.timeScale = 0f;
+            //if (OnGameStop != null)
+            //{
+            //    OnGameStop();
+            //}
         }
 
         public void LoadScene(string sceneName)
