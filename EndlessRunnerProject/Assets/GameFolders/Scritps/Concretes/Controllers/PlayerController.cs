@@ -1,5 +1,6 @@
 using EndlessRunnerProject.Abstacts.Inputs;
 using EndlessRunnerProject.Inputs;
+using EndlessRunnerProject.Managers;
 using EndlessRunnerProject.Movements;
 using System.Collections;
 using System.Collections.Generic;
@@ -19,6 +20,7 @@ namespace EndlessRunnerProject.Controllers
         IInputReader _input;
         float _horizontal;
         bool _isJump;
+        bool _isDead = false;
 
         public float MoveSpeed => _moveSpeed;
         public float MoveBoundary => _moveBoundary;
@@ -32,6 +34,8 @@ namespace EndlessRunnerProject.Controllers
 
         private void Update()
         {
+            if (_isDead) return;
+
             _horizontal = _input.Horizontal;
 
             if (_input.IsJump)
@@ -49,6 +53,17 @@ namespace EndlessRunnerProject.Controllers
                 _jump.TickFixed(_jumpForce);
             }
             _isJump = false;
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            EnemyController enemyController = other.GetComponent<EnemyController>();
+
+            if (enemyController != null)
+            {
+                _isDead = true;
+                GameManager.Instance.StopGame();
+            }
         }
     }
 }
