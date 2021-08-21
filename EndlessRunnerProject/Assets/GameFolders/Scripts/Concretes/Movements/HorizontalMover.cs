@@ -13,12 +13,11 @@ namespace EndlessRunnerProject.Movements
         float _moveSpeed;
         float _moveBoundary;
 
-        public HorizontalMover(IEntityController playerController)
+        public HorizontalMover(IEntityController entityController)
         {
-            _playerController = playerController;
-            //_moveSpeed = playerController.MoveSpeed;
-            //_moveBoundary = playerController.MoveBoundary;
-
+            _playerController = entityController;
+            _moveSpeed = entityController.MoveSpeed;
+            _moveBoundary = entityController.MoveBoundary;
         }
 
         public void FixedTick(float horizontal)

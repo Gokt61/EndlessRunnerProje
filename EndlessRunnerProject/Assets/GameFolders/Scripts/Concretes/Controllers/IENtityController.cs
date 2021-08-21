@@ -7,15 +7,13 @@ using UnityEngine;
 
 namespace EndlessRunnerProject.Controllers
 {
-    public class EnemyController : MonoBehaviour, IEntityController
-    {
-        [SerializeField] float _moveSpeed = 10;
+    public class EnemyController : MyCharacterController, IEntityController
+    {    
         [SerializeField] float _maxLifeTime = 10f;
 
         VerticalMover _mover;
         float currentLifeTime = 0f;
 
-        public float MoveSpeed => _moveSpeed;
 
         private void Awake()
         {

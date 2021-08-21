@@ -14,7 +14,7 @@ namespace EndlessRunnerProject.Movements
         public VerticalMover(IEntityController entityController)
         {
             _entityController = entityController;
-            //_moveSpeed = entityController.MoveSpeed;
+            _moveSpeed = entityController.MoveSpeed;
         }
 
         public void FixedTick(float vertical = 1)
