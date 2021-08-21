@@ -148,6 +148,10 @@ PrefabInstance:
       propertyPath: m_Center.y
       value: 0.35
       objectReference: {fileID: 0}
+    - target: {fileID: 5848036694085017203, guid: cd2a4c7483d8d254b81a874fbc21b3f6, type: 3}
+      propertyPath: _enemyEnum
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd2a4c7483d8d254b81a874fbc21b3f6, type: 3}
 --- !u!4 &6989490197979033068 stripped

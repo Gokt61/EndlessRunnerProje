@@ -489,6 +489,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5577111178379427974, guid: ff508d6c6c21b924781809a0643c04ea, type: 3}
     - target: {fileID: 9114666980663416196, guid: bf27f90b8b70cea4f86dc53cde33fcfe, type: 3}
+      propertyPath: _addDelatTime
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 9114666980663416196, guid: bf27f90b8b70cea4f86dc53cde33fcfe, type: 3}
       propertyPath: _enemyPrefabs.Array.size
       value: 4
       objectReference: {fileID: 0}
@@ -519,11 +523,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 347444519767513926, guid: 0f345d04d3ec1e44ebf0a5423969877b, type: 3}
       propertyPath: _max
-      value: 13
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 347444519767513926, guid: 0f345d04d3ec1e44ebf0a5423969877b, type: 3}
       propertyPath: _min
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1122226758952830810, guid: 0f345d04d3ec1e44ebf0a5423969877b, type: 3}
       propertyPath: m_Name
@@ -531,11 +535,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1679656562053494261, guid: 0f345d04d3ec1e44ebf0a5423969877b, type: 3}
       propertyPath: _max
-      value: 13
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1679656562053494261, guid: 0f345d04d3ec1e44ebf0a5423969877b, type: 3}
       propertyPath: _min
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4508956889185762583, guid: 0f345d04d3ec1e44ebf0a5423969877b, type: 3}
       propertyPath: m_RootOrder
@@ -583,7 +587,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7096601223957537470, guid: 0f345d04d3ec1e44ebf0a5423969877b, type: 3}
       propertyPath: _max
-      value: 15
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 7096601223957537470, guid: 0f345d04d3ec1e44ebf0a5423969877b, type: 3}
       propertyPath: _min
@@ -591,15 +595,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8104481069974149764, guid: 0f345d04d3ec1e44ebf0a5423969877b, type: 3}
       propertyPath: _max
-      value: 15
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 8104481069974149764, guid: 0f345d04d3ec1e44ebf0a5423969877b, type: 3}
       propertyPath: _min
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8494396943624095679, guid: 0f345d04d3ec1e44ebf0a5423969877b, type: 3}
       propertyPath: _max
-      value: 10
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8494396943624095679, guid: 0f345d04d3ec1e44ebf0a5423969877b, type: 3}
       propertyPath: _min
