@@ -1,3 +1,5 @@
+using EndlessRunnerProject.Abstacts.Controllers;
+using EndlessRunnerProject.Abstacts.Movements;
 using EndlessRunnerProject.Controllers;
 using System.Collections;
 using System.Collections.Generic;
@@ -5,21 +7,21 @@ using UnityEngine;
 
 namespace EndlessRunnerProject.Movements
 {
-    public class HorizontalMover
+    public class HorizontalMover : IMover
     {
-        PlayerController _playerController;
+        IEntityController _playerController;
         float _moveSpeed;
         float _moveBoundary;
 
-        public HorizontalMover(PlayerController playerController)
+        public HorizontalMover(IEntityController playerController)
         {
             _playerController = playerController;
-            _moveSpeed = playerController.MoveSpeed;
-            _moveBoundary = playerController.MoveBoundary;
+            //_moveSpeed = playerController.MoveSpeed;
+            //_moveBoundary = playerController.MoveBoundary;
 
         }
 
-        public void TickFixed(float horizontal)
+        public void FixedTick(float horizontal)
         {
             if (horizontal == 0f) return;
 

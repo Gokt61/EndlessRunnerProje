@@ -7,6 +7,7 @@ namespace EndlessRunnerProject.Controllers
 {
     public class SpawnerController : MonoBehaviour
     {
+        //[SerializeField] EnemyController _enemyPrefab; bu yapýyý enemyManagerý yazdýk.
 
         [Range(0.1f,5f)] [SerializeField] float _min = 0.1f;
         [Range(6f, 15f)] [SerializeField] float _max = 15f;
@@ -32,7 +33,10 @@ namespace EndlessRunnerProject.Controllers
         private void Spawn()
         {
             //Dusman olusturma islemi
-            EnemyController newEnemy = EnemyManager.Instance.GetPool(); 
+            //EnemyController newEnemy = Instantiate(_enemyPrefab, transform.position, transform.rotation);
+            //newEnemy.transform.parent = this.transform;
+
+            EnemyController newEnemy = EnemyManager.Instance.GetPool();
             newEnemy.transform.parent = this.transform;
             newEnemy.transform.position = this.transform.position;
             newEnemy.gameObject.SetActive(true);

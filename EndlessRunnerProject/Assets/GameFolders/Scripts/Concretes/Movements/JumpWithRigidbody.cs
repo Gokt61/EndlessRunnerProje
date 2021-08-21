@@ -1,3 +1,4 @@
+using EndlessRunnerProject.Abstacts.Movements;
 using EndlessRunnerProject.Controllers;
 using System.Collections;
 using System.Collections.Generic;
@@ -5,7 +6,7 @@ using UnityEngine;
 
 namespace EndlessRunnerProject.Movements
 {
-    public class JumpWithRigidbody
+    public class JumpWithRigidbody : IJump
     {
         Rigidbody _rigidboyd;
         public bool CanJump => _rigidboyd.velocity.y != 0;
@@ -15,7 +16,7 @@ namespace EndlessRunnerProject.Movements
             _rigidboyd = playerController.GetComponent<Rigidbody>();
         }
 
-        public void TickFixed(float jumpForce)
+        public void FixedTick(float jumpForce)
         {
             if (CanJump) return;
 

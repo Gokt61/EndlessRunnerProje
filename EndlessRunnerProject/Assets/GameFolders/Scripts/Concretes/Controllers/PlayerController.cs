@@ -1,4 +1,6 @@
+using EndlessRunnerProject.Abstacts.Controllers;
 using EndlessRunnerProject.Abstacts.Inputs;
+using EndlessRunnerProject.Abstacts.Movements;
 using EndlessRunnerProject.Inputs;
 using EndlessRunnerProject.Managers;
 using EndlessRunnerProject.Movements;
@@ -9,14 +11,14 @@ using UnityEngine.InputSystem;
 
 namespace EndlessRunnerProject.Controllers
 {
-    public class PlayerController : MonoBehaviour
+    public class PlayerController : MonoBehaviour, IEntityController
     {
         [SerializeField] float _moveBoundary = 4.5f;
         [SerializeField] float _moveSpeed = 10f;
         [SerializeField] float _jumpForce = 300f;
 
-        JumpWithRigidbody _jump;
-        HorizontalMover _horizontalMover;
+        IJump _jump;
+        IMover _mover;
         IInputReader _input;
         float _horizontal;
         bool _isJump;
@@ -27,7 +29,7 @@ namespace EndlessRunnerProject.Controllers
 
         private void Awake()
         {
-            _horizontalMover = new HorizontalMover(this);
+            _mover = new HorizontalMover(this);
             _jump = new JumpWithRigidbody(this);
             _input = new InputReader(GetComponent<PlayerInput>());
         }
@@ -46,20 +48,20 @@ namespace EndlessRunnerProject.Controllers
 
         private void FixedUpdate()
         {
-            _horizontalMover.TickFixed(_horizontal);
+            _mover.FixedTick(_horizontal);
 
             if (_isJump)
             {
-                _jump.TickFixed(_jumpForce);
+                _jump.FixedTick(_jumpForce);
             }
             _isJump = false;
         }
 
         private void OnTriggerEnter(Collider other)
         {
-            EnemyController enemyController = other.GetComponent<EnemyController>();
+            IEntityController entityController = other.GetComponent<IEntityController>();
 
-            if (enemyController != null)
+            if (entityController != null)
             {
                 _isDead = true;
                 GameManager.Instance.StopGame();

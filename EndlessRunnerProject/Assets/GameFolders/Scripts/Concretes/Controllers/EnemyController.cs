@@ -1,3 +1,4 @@
+using EndlessRunnerProject.Abstacts.Controllers;
 using EndlessRunnerProject.Managers;
 using EndlessRunnerProject.Movements;
 using System.Collections;
@@ -6,7 +7,7 @@ using UnityEngine;
 
 namespace EndlessRunnerProject.Controllers
 {
-    public class EnemyController : MonoBehaviour
+    public class EnemyController : MonoBehaviour, IEntityController
     {
         [SerializeField] float _moveSpeed = 10;
         [SerializeField] float _maxLifeTime = 10f;
@@ -38,6 +39,7 @@ namespace EndlessRunnerProject.Controllers
 
         private void KillYourSelf()
         {
+            //Destroy(this.gameObject);
             EnemyManager.Instance.SetPool(this);
         }
     }

@@ -37,6 +37,7 @@ namespace EndlessRunnerProject.Managers
         {
             enemyController.gameObject.SetActive(false);
             enemyController.transform.parent = this.transform;
+            //enqueue = sýraya alma- havuza ekleme
             _enemies.Enqueue(enemyController);
         }
 
@@ -46,6 +47,7 @@ namespace EndlessRunnerProject.Managers
             {
                 InitializePool();
             }
+            //dequeue = kuyruðu boþaltma - havuzdan çýkarma
             return _enemies.Dequeue();
         }
     }

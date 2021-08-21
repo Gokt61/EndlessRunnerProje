@@ -1,3 +1,5 @@
+using EndlessRunnerProject.Abstacts.Controllers;
+using EndlessRunnerProject.Abstacts.Movements;
 using EndlessRunnerProject.Controllers;
 using System.Collections;
 using System.Collections.Generic;
@@ -5,19 +7,19 @@ using UnityEngine;
 
 namespace EndlessRunnerProject.Movements
 {
-    public class VerticalMover
+    public class VerticalMover : IMover
     {
-        EnemyController _enemyController;
+        IEntityController _entityController;
         float _moveSpeed;
-        public VerticalMover(EnemyController enemyController)
+        public VerticalMover(IEntityController entityController)
         {
-            _enemyController = enemyController;
-            _moveSpeed = enemyController.MoveSpeed;
+            _entityController = entityController;
+            //_moveSpeed = entityController.MoveSpeed;
         }
 
-        public void FixedTick()
+        public void FixedTick(float vertical = 1)
         {
-            _enemyController.transform.Translate(Vector3.back * _moveSpeed * Time.deltaTime);
+            _entityController.transform.Translate(Vector3.back * _moveSpeed * Time.deltaTime);
         }
     }
 }
